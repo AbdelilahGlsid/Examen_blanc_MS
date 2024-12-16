@@ -1,5 +1,5 @@
 package bouhkka.abdelilah.keynoteservice.security;
-/*
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -49,4 +49,4 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
-}*/
+}

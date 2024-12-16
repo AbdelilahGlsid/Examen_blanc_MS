@@ -1,5 +1,5 @@
 package bouhkka.abdelilah.conferenceservice.security;
-/*
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -32,12 +32,13 @@ public class SecurityConfig {
                 .csrf(csrf->csrf.disable())
                 .headers(h->h.frameOptions(fo->fo.disable()))
                 .authorizeHttpRequests(ar->ar.requestMatchers("/h2-console/**").permitAll())
-                .authorizeHttpRequests(ar->ar.requestMatchers("/api/conferences/**").hasAuthority("ADMIN"))
+                .authorizeHttpRequests(ar->ar.requestMatchers("/api/conferences/**", "/swagger-ui.html","/v3/**","/swagger-ui/**").hasAuthority("ADMIN"))
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
                 .oauth2ResourceServer(o2->o2.jwt(jwt->jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 //.oauth2ResourceServer(o2->o2.jwt(Customizer.withDefaults()))
                 .build();
     }
+
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -49,4 +50,4 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
-}*/
+}

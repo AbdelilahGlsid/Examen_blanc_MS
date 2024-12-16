@@ -1,5 +1,5 @@
 package bouhkka.abdelilah.keynoteservice.security;
-/*
+
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,4 +37,4 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
         return roles.stream().map(role->new SimpleGrantedAuthority(role)).collect(Collectors.toSet());
     }
 
-}*/
+}
